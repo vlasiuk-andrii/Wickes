@@ -1,0 +1,7 @@
+# Created by .ignore support plugin (hsz.mobi)
+*.class
+.idea
+Wickes.iml
+target/
+/Gmail.iml
+.idea/
