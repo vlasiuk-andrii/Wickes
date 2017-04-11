@@ -1,14 +1,12 @@
 package wickes;
 
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public abstract class Fragment extends BaseClass{
-    protected WebDriver driver;
-    protected WebElement rootElement;
+public abstract class Fragment extends ServiceWD {
+    private WebElement rootElement;
+    private WebElement rootElement1;
 
-    public Fragment() {
-    }
 
     public WebElement getRootElement(){
         return rootElement;
@@ -18,7 +16,7 @@ public abstract class Fragment extends BaseClass{
         this.rootElement = element;
     }
 
-    public void isRootElementPresent(){
-        //driver.findElement(rootElement);
+    public WebElement getChildElement(By element){
+        return rootElement.findElement(element);
     }
 }

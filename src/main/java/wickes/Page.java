@@ -1,19 +1,16 @@
 package wickes;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-
 import static junit.framework.TestCase.assertTrue;
 
-public abstract class Page extends BaseClass{
-    protected WebDriver driver;
-    protected String title;
-    protected String url;
+public abstract class Page extends ServiceWD {
+
+    private String title;
+    private String url;
 
     public Page() {
     }
 
-    public void visit(){
+    public void visit(String sku){
         driver.get(url);
     }
 
