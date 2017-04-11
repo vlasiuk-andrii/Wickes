@@ -1,12 +1,12 @@
 package wickes;
 
 import static junit.framework.TestCase.assertTrue;
+import static wickes.appendice.CommonConstants.rootUrl;
 
 public abstract class Page extends ServiceWD {
 
     private String title;
     private String url;
-    private String rootUrl = "http://www.wickes.co.uk";
 
     public Page() {
     }
