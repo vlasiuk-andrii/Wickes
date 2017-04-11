@@ -1,10 +1,15 @@
 package wickes.fragments;
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import wickes.Fragment;
 
 public class SearchResultFragment extends Fragment{
+
+    @FindBy(css = "div#searchResults")
+    private WebElement root;
+
     public SearchResultFragment() {
-        rootElement = driver.findElement(By.cssSelector("div#searchResults"));
+        setRootElement(root);
     }
 }

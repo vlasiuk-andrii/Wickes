@@ -1,11 +1,15 @@
 package wickes.fragments;
 
-import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import wickes.Fragment;
 
 public class MainIconFragment extends Fragment{
 
+    @FindBy(css = "//img[@title='Wickes.co.uk']")
+    private WebElement root;
+
     public MainIconFragment() {
-        rootElement = driver.findElement(By.xpath("//img[@title='Wickes.co.uk']"));
+        setRootElement(root);
     }
 }

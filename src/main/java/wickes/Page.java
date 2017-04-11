@@ -6,16 +6,17 @@ public abstract class Page extends ServiceWD {
 
     private String title;
     private String url;
+    protected String rootUrl = "http://www.wickes.co.uk";
 
     public Page() {
     }
 
-    public void visit(String sku){
-        driver.get(url);
+    public void visit(){
+        driver.get(rootUrl + url);
     }
 
     public void check(){
-        driver.getCurrentUrl().compareTo(url);
+        assertTrue(driver.getCurrentUrl().contains(url));
     }
 
     protected void setTitle(String title){
@@ -27,7 +28,6 @@ public abstract class Page extends ServiceWD {
     }
 
     protected void pageContainsFragment(Fragment fragment){
-
         assertTrue(fragment.getRootElement().isDisplayed());
     }
 
