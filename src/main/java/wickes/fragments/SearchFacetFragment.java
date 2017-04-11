@@ -16,6 +16,6 @@ public class SearchFacetFragment extends Fragment{
     }
 
     public void clickSubmit() {
-        getChildElement(submitButton).click();
+        //getChildElement(submitButton).click();
     }
 }

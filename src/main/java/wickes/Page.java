@@ -6,13 +6,17 @@ public abstract class Page extends ServiceWD {
 
     private String title;
     private String url;
-    protected String rootUrl = "http://www.wickes.co.uk";
+    private String rootUrl = "http://www.wickes.co.uk";
 
     public Page() {
     }
 
     public void visit(){
         driver.get(rootUrl + url);
+    }
+
+    public void visit(String requestText){
+        driver.get(rootUrl + url + requestText);
     }
 
     public void check(){
@@ -27,13 +31,12 @@ public abstract class Page extends ServiceWD {
         this.url = url;
     }
 
-    protected void pageContainsFragment(Fragment fragment){
-        assertTrue(fragment.getRootElement().isDisplayed());
-    }
-
-    protected void pageContainsFragments(Fragment... fragments){
+    protected boolean pageContainsFragments(Fragment... fragments){
         for (Fragment fragment : fragments) {
-           assertTrue("Fragment is not displayed",fragment.getRootElement().isDisplayed());
+           if (!fragment.getRootElement().isDisplayed()){
+               return false;
+           }
         }
+        return true;
     }
 }

@@ -6,7 +6,7 @@ import wickes.Fragment;
 
 public class MainIconFragment extends Fragment{
 
-    @FindBy(css = "//img[@title='Wickes.co.uk']")
+    @FindBy(xpath = "//img[@title='Wickes.co.uk']")
     private WebElement root;
 
     public MainIconFragment() {

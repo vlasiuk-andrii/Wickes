@@ -4,16 +4,14 @@ import wickes.ServiceWD;
 
 public class BaseSpec {
 
-    ServiceWD serviceWD = new ServiceWD();
-
     @BeforeClass
-    public void setUp() {
-        serviceWD.initWD();
+    public static void setUp() {
+        ServiceWD.initWD();
     }
 
     @AfterClass
-    public void tearDown() {
-        serviceWD.getDriver().close();
-        serviceWD.getDriver().quit();
+    public static void tearDown() {
+        ServiceWD.getDriver().close();
+        ServiceWD.getDriver().quit();
     }
 }

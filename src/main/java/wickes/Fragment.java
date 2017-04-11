@@ -1,11 +1,10 @@
 package wickes;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public abstract class Fragment extends ServiceWD {
     private WebElement rootElement;
-    private WebElement rootElement1;
+    //private WebElement rootElement1;
 
 
     public WebElement getRootElement(){
@@ -16,7 +15,7 @@ public abstract class Fragment extends ServiceWD {
         this.rootElement = element;
     }
 
-    public WebElement getChildElement(By element){
-        return rootElement.findElement(element);
-    }
+//    public WebElement getChildElement(By element){
+//        return rootElement.findElement(element);
+//    }
 }
