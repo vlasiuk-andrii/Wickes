@@ -21,6 +21,7 @@ public abstract class Page extends ServiceWD {
 
     public void check(){
         assertTrue(driver.getCurrentUrl().contains(url));
+        assertTrue(driver.getTitle().contains(title));
     }
 
     protected void setTitle(String title){
