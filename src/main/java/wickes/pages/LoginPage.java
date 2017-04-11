@@ -1,11 +1,11 @@
-package wickes.Pages;
+package wickes.pages;
 
 import wickes.Page;
 
 public class LoginPage extends Page {
 
     public LoginPage() {
-        url = "/login";
-        title = "\t\tWickes.co.uk";
+        setTitle("\t\tWickes.co.uk");
+        setUrl("/login");
     }
 }

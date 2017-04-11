@@ -1,4 +1,4 @@
-package wickes.Fragments;
+package wickes.fragments;
 
 import wickes.Fragment;
 

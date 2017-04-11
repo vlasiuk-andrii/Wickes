@@ -1,10 +1,10 @@
-package wickes.Pages;
+package wickes.pages;
 
 import wickes.Page;
 
 public class SearchResultPage extends Page{
     public SearchResultPage() {
-        url = "/search";
-        title = "\t\tSearch sfse | Wickes.co.uk";
+        setTitle("\t\tSearch sfse | Wickes.co.uk");
+        setUrl("/search");
     }
 }

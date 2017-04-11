@@ -1,11 +1,12 @@
-package wickes.Pages;
+package wickes.pages;
 
 import wickes.Page;
 
 public class BasketPage extends Page{
 
     public BasketPage() {
-        url = "/cart";
-        title = "\t\tWickes.co.uk";
+        setTitle("\t\tWickes.co.uk");
+        setUrl("/cart");
     }
+
 }
