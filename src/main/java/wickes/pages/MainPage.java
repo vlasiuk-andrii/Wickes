@@ -12,7 +12,7 @@ public class MainPage extends Page{
 
     public MainPage() {
         setUrl("/");
-        setTitle("\t\tWickes DIY - Home Improvement Products for Trade and DIY");
+        setTitle("Wickes DIY - Home Improvement Products for Trade and DIY");
     }
 
     public boolean isContentOnPageCorrect(){

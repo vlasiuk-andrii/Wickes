@@ -14,7 +14,7 @@ public class BasketPage extends Page{
     BasketFragment basketFragment = new BasketFragment();
 
     public BasketPage() {
-        setTitle("\t\tWickes.co.uk");
+        setTitle("Wickes.co.uk");
         setUrl("/cart");
     }
 

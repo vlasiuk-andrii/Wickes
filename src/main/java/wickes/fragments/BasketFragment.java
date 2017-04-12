@@ -6,7 +6,7 @@ import wickes.Fragment;
 
 public class BasketFragment extends Fragment{
 
-    @FindBy(css = "div.basketPanel")
+    @FindBy(css = "div#basketPanel")
     private WebElement root;
 
     public BasketFragment() {

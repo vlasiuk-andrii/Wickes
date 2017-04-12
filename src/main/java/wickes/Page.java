@@ -8,9 +8,6 @@ public abstract class Page extends ServiceWD {
     private String title;
     private String url;
 
-    public Page() {
-    }
-
     public void visit(){
         driver.get(rootUrl + url);
     }

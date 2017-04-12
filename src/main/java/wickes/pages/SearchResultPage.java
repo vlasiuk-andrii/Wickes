@@ -12,7 +12,7 @@ public class SearchResultPage extends Page{
     SearchResultFragment searchResultFragment = new SearchResultFragment();
 
     public SearchResultPage() {
-        setTitle("\t\tSearch sfse | Wickes.co.uk");
+        setTitle("Search gloves | Wickes.co.uk");
         setUrl("/search");
     }
 

@@ -14,7 +14,7 @@ public class LoginPage extends Page {
     AccountFragment accountFragment = new AccountFragment();
 
     public LoginPage() {
-        setTitle("\t\tWickes.co.uk");
+        setTitle("Wickes.co.uk");
         setUrl("/login");
     }
 

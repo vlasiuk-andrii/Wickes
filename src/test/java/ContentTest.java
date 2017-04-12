@@ -52,5 +52,4 @@ public class ContentTest extends BaseSpec{
         then:
         assertTrue("Content on searchResultPage is incorrect",searchResultPage.isContentOnPageCorrect());
     }
-
 }
