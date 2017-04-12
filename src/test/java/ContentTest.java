@@ -1,8 +1,5 @@
 import org.junit.Test;
-import wickes.pages.BasketPage;
-import wickes.pages.LoginPage;
-import wickes.pages.MainPage;
-import wickes.pages.SearchResultPage;
+import wickes.pages.*;
 
 import static junit.framework.TestCase.assertTrue;
 
@@ -12,6 +9,7 @@ public class ContentTest extends BaseSpec{
     private LoginPage loginPage = new LoginPage();
     private BasketPage basketPage = new BasketPage();
     private SearchResultPage searchResultPage = new SearchResultPage();
+    private ProductDetailsPage productDetailsPage = new ProductDetailsPage();
 
     @Test
     public void mainPageContentTest(){
@@ -51,5 +49,15 @@ public class ContentTest extends BaseSpec{
         searchResultPage.check();
         then:
         assertTrue("Content on searchResultPage is incorrect",searchResultPage.isContentOnPageCorrect());
+    }
+
+    @Test
+    public void productDetailsPage(){
+        given:
+        productDetailsPage.visit("186927");
+        when:
+        productDetailsPage.check();
+        then:
+        assertTrue("Content on productDetailsPage is incorrect",productDetailsPage.isContentOnPageCorrect());
     }
 }

@@ -1,5 +1,9 @@
 package wickes;
 
+import org.openqa.selenium.By;
+
+import java.util.*;
+
 import static junit.framework.TestCase.assertTrue;
 import static wickes.appendice.CommonConstants.rootUrl;
 
@@ -7,6 +11,7 @@ public abstract class Page extends ServiceWD {
 
     private String title;
     private String url;
+    private Map<String, Fragment> fragments = new HashMap<String, Fragment>();
 
     public void visit(){
         driver.get(rootUrl + url);
@@ -36,5 +41,19 @@ public abstract class Page extends ServiceWD {
            }
         }
         return true;
+    }
+
+    protected void setFragmentsMap(Fragment... fragments){
+        for (Fragment fragment : fragments){
+            this.fragments.put(fragment.toString(), fragment);
+        }
+    }
+
+    public Map<String, Fragment> getFragmentsMap(){
+        return (fragments);
+    }
+
+    public Fragment getFragment(String fragmentName){
+        return fragments.get(fragmentName);
     }
 }
