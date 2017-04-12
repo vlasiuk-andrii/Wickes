@@ -11,12 +11,13 @@ public class AddToBasketTest extends BaseSpec{
 
     @Test
     public void addToBasketTest(){
-        given:
-        productDetailsPage.visit();
+        //given:
+        productDetailsPage.visit("/186927");
         productDetailsPage.check();
-        when:
-        productDetailsPage.getFragment("productDetailsFragment").getChildElement(By.cssSelector("button.addToBasketButton ")).click();
-        then:
-
+        //when:
+        System.out.println(productDetailsPage.getFragment("ProductDetailsFragment"));
+        //productDetailsPage.getFragment("productDetailsFragment").getChildElement(By.cssSelector("button.addToBasketButton")).click();
+        //then:
+        //productDetailsPage.getFragment("basketPopUpFragment").isFragmentDisplayed();
     }
 }

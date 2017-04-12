@@ -28,4 +28,6 @@ public abstract class Fragment extends ServiceWD {
         }
         return webElements;
     }
+
+    public void isFragmentDisplayed(){}
 }

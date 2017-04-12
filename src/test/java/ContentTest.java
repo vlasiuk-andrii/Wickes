@@ -54,7 +54,7 @@ public class ContentTest extends BaseSpec{
     @Test
     public void productDetailsPage(){
         given:
-        productDetailsPage.visit("186927");
+        productDetailsPage.visit("/186927");
         when:
         productDetailsPage.check();
         then:
