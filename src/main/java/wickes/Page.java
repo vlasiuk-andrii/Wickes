@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static junit.framework.TestCase.assertTrue;
-import static wickes.appendice.CommonConstants.rootUrl;
+import static wickes.appendice.CommonConstants.ROOT_URL;
 
 public abstract class Page extends ServiceWD {
 
@@ -13,11 +13,11 @@ public abstract class Page extends ServiceWD {
     private Map<String, Fragment> fragments = new HashMap<String, Fragment>();
 
     public void visit(){
-        driver.get(rootUrl + url);
+        driver.get(ROOT_URL + url);
     }
 
     public void visit(String requestText){
-        driver.get(rootUrl + url + requestText);
+        driver.get(ROOT_URL + url + requestText);
     }
 
     public void check(){

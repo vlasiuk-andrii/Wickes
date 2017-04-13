@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 import wickes.pages.BasketPage;
 import wickes.pages.ProductDetailsPage;
 
+import static wickes.appendice.FragmentsConstants.*;
+
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class AddToBasketTest extends BaseSpec{
     private BasketPage basketPage = new BasketPage();
@@ -16,9 +18,9 @@ public class AddToBasketTest extends BaseSpec{
         productDetailsPage.visit("/186927");
         productDetailsPage.check();
         when:
-        productDetailsPage.getFragment("ProductDetailsFragment").getChildElement(By.cssSelector("button.addToBasketButton")).click();
+        productDetailsPage.getFragment(PRODUCT_DETAILS_FRAGMENT).getChildElement(By.cssSelector("button.addToBasketButton")).click();
         then:
-        productDetailsPage.getFragment("BasketPopUpFragment").isFragmentDisplayed();
+        productDetailsPage.getFragment(BASKET_POPUP_FRAGMENT).isFragmentDisplayed();
     }
 
     @Test
@@ -28,6 +30,6 @@ public class AddToBasketTest extends BaseSpec{
         when:
         basketPage.check();
         then:
-        basketPage.getFragment("BasketFragment").getChildElement(By.cssSelector("div.product_details_sku")).isDisplayed();
+        basketPage.getFragment(BASKET_FRAGMENT).getChildElement(By.cssSelector("div.product_details_sku")).isDisplayed();
     }
 }
