@@ -1,8 +1,7 @@
 package wickes;
 
-import org.openqa.selenium.By;
-
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 import static junit.framework.TestCase.assertTrue;
 import static wickes.appendice.CommonConstants.rootUrl;
@@ -45,7 +44,7 @@ public abstract class Page extends ServiceWD {
 
     protected void setFragmentsMap(Fragment... fragments){
         for (Fragment fragment : fragments){
-            this.fragments.put(fragment.toString(), fragment);
+            this.fragments.put(fragment.getClass().toString().replaceAll("class wickes.fragments.", ""), fragment);
         }
     }
 
