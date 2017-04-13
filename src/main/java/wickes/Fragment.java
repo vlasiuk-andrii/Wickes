@@ -8,6 +8,7 @@ import java.util.List;
 
 public abstract class Fragment extends ServiceWD {
     private WebElement rootElement;
+    private List<WebElement> webElements = new ArrayList<WebElement>();
 
     public WebElement getRootElement(){
         return rootElement;
@@ -17,8 +18,18 @@ public abstract class Fragment extends ServiceWD {
         this.rootElement = element;
     }
 
-    public WebElement getChildElement(By element){
-        return rootElement.findElement(element);
+    public void setWebElements(List<WebElement> fields){
+        fields.get(0).
+
+        System.out.println(fields);
+    }
+
+    public WebElement getChildElement(String element){
+        return rootElement.findElement(By.cssSelector(element));
+    }
+
+    public List<WebElement> getChildElementList(){
+        return webElements;
     }
 
     public List<By> getChildElements(By... elements){

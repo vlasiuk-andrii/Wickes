@@ -1,9 +1,8 @@
 import org.junit.Test;
-import org.openqa.selenium.By;
 import wickes.pages.*;
 
 import static junit.framework.TestCase.assertTrue;
-import static wickes.appendice.FragmentsConstants.*;
+import static wickes.appendice.FragmentsConstants.PRODUCT_DETAILS_FRAGMENT;
 
 public class ContentTest extends BaseSpec{
 
@@ -12,6 +11,9 @@ public class ContentTest extends BaseSpec{
     private BasketPage basketPage = new BasketPage();
     private SearchResultPage searchResultPage = new SearchResultPage();
     private ProductDetailsPage productDetailsPage = new ProductDetailsPage();
+
+    public ContentTest() throws NoSuchFieldException, IllegalAccessException {
+    }
 
     @Test
     public void mainPageContentTest(){
@@ -59,7 +61,7 @@ public class ContentTest extends BaseSpec{
         productDetailsPage.visit("/186927");
         when:
         productDetailsPage.check();
-        productDetailsPage.getFragment(PRODUCT_DETAILS_FRAGMENT).getChildElement(By.cssSelector("button.addToBasketButton")).click(); // need for making PopUp visible
+        productDetailsPage.getFragment(PRODUCT_DETAILS_FRAGMENT).getChildElement("button.addToBasketButton").click(); // need for making PopUp visible
         Thread.sleep(1000);
         then:
         assertTrue("Content on productDetailsPage is incorrect",productDetailsPage.isContentOnPageCorrect());

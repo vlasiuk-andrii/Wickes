@@ -11,7 +11,7 @@ public class ProductDetailsPage extends Page {
     ProductDetailsFragment productDetailsFragment = new ProductDetailsFragment();
     BasketPopUpFragment basketPopUpFragment = new BasketPopUpFragment();
 
-    public ProductDetailsPage(){
+    public ProductDetailsPage() {
         setUrl("/p");
         setTitle("Wickes Grippa Gloves Orange One Size | Wickes.co.uk");
         setFragmentsMap(
