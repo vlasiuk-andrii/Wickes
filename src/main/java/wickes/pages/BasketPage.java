@@ -16,10 +16,15 @@ public class BasketPage extends Page{
     public BasketPage() {
         setTitle("Wickes.co.uk");
         setUrl("/cart");
+        setFragmentsMap(
+                mainIconFragment,
+                searchFragment,
+                menuFragment,
+                basketFragment);
     }
 
     public boolean isContentOnPageCorrect(){
-        if (!pageContainsFragments(mainIconFragment, searchFragment, menuFragment, basketFragment)){
+        if (!pageContainsFragments(getFragments())){
             return false;
         }
         return true;

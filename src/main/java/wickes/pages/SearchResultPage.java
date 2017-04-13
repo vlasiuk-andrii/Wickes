@@ -14,10 +14,16 @@ public class SearchResultPage extends Page{
     public SearchResultPage() {
         setTitle("Search gloves | Wickes.co.uk");
         setUrl("/search");
+        setFragmentsMap(
+                mainIconFragment,
+                searchFragment,
+                menuFragment,
+                searchFacetFragment,
+                searchResultFragment);
     }
 
     public boolean isContentOnPageCorrect(){
-        if (!pageContainsFragments(mainIconFragment, searchFragment, menuFragment, searchFacetFragment, searchResultFragment)){
+        if (!pageContainsFragments(getFragments())){
             return false;
         }
         return true;

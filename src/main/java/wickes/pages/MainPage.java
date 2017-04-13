@@ -13,10 +13,14 @@ public class MainPage extends Page{
     public MainPage() {
         setUrl("/");
         setTitle("Wickes DIY - Home Improvement Products for Trade and DIY");
+        setFragmentsMap(
+                mainIconFragment,
+                searchFragment,
+                menuFragment);
     }
 
     public boolean isContentOnPageCorrect(){
-        if (!pageContainsFragments(mainIconFragment, searchFragment, menuFragment)){
+        if (!pageContainsFragments(getFragments())){
             return false;
         }
         return true;

@@ -33,9 +33,9 @@ public abstract class Page extends ServiceWD {
         this.url = url;
     }
 
-    protected boolean pageContainsFragments(Fragment... fragments){
-        for (Fragment fragment : fragments) {
-           if (!fragment.getRootElement().isDisplayed()){
+    protected boolean pageContainsFragments(Map<String,Fragment> fragments){
+        for (Map.Entry<String,Fragment> entry : fragments.entrySet()) {
+           if (!entry.getValue().getRootElement().isDisplayed()){
                return false;
            }
         }
@@ -48,7 +48,7 @@ public abstract class Page extends ServiceWD {
         }
     }
 
-    public Map<String, Fragment> getFragmentsMap(){
+    public Map<String, Fragment> getFragments(){
         return (fragments);
     }
 

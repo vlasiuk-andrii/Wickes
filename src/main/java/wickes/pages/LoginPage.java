@@ -16,10 +16,15 @@ public class LoginPage extends Page {
     public LoginPage() {
         setTitle("Wickes.co.uk");
         setUrl("/login");
+        setFragmentsMap(
+                mainIconFragment,
+                searchFragment,
+                menuFragment,
+                accountFragment);
     }
 
     public boolean isContentOnPageCorrect(){
-        if (!pageContainsFragments(mainIconFragment, searchFragment, menuFragment, accountFragment)){
+        if (!pageContainsFragments(getFragments())){
             return false;
         }
         return true;

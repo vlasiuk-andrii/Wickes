@@ -23,7 +23,7 @@ public class ProductDetailsPage extends Page {
     }
 
     public boolean isContentOnPageCorrect(){
-        if (!pageContainsFragments(mainIconFragment, searchFragment, menuFragment, productDetailsFragment)){
+        if (!pageContainsFragments(getFragments())){
             return false;
         }
         return true;
