@@ -22,11 +22,4 @@ public class LoginPage extends Page {
                 menuFragment,
                 accountFragment);
     }
-
-    public boolean isContentOnPageCorrect(){
-        if (!pageContainsFragments(getFragments())){
-            return false;
-        }
-        return true;
-    }
 }

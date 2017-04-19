@@ -3,12 +3,11 @@ package wickes;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public abstract class Fragment extends ServiceWD {
     private WebElement rootElement;
-    private List<WebElement> webElements = new ArrayList<WebElement>();
+    private Map<String, WebElement> webElements = new HashMap<String, WebElement>();
 
     public WebElement getRootElement(){
         return rootElement;
@@ -18,17 +17,21 @@ public abstract class Fragment extends ServiceWD {
         this.rootElement = element;
     }
 
-    public void setWebElements(List<WebElement> fields){
-        fields.get(0).
-
-        System.out.println(fields);
+    public void setWebElements(WebElement... childWebElements){
+        for (WebElement element : childWebElements){
+            webElements.put( element.toString(), element);
+        }
     }
 
-    public WebElement getChildElement(String element){
-        return rootElement.findElement(By.cssSelector(element));
+    public Map<String, WebElement> getWebElements(){
+        return webElements;
     }
 
-    public List<WebElement> getChildElementList(){
+    public WebElement getChildElement(By cssSelector){
+        return rootElement.findElement(cssSelector);
+    }
+
+    public Map<String, WebElement> getChildElementMap(){
         return webElements;
     }
 

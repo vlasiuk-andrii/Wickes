@@ -1,4 +1,5 @@
 import org.junit.Test;
+import org.openqa.selenium.By;
 import wickes.pages.*;
 
 import static junit.framework.TestCase.assertTrue;
@@ -61,7 +62,7 @@ public class ContentTest extends BaseSpec{
         productDetailsPage.visit("/186927");
         when:
         productDetailsPage.check();
-        productDetailsPage.getFragment(PRODUCT_DETAILS_FRAGMENT).getChildElement("button.addToBasketButton").click(); // need for making PopUp visible
+        productDetailsPage.getFragment(PRODUCT_DETAILS_FRAGMENT).getChildElement(By.cssSelector("button.addToBasketButton")).click(); // need for making PopUp visible
         Thread.sleep(1000);
         then:
         assertTrue("Content on productDetailsPage is incorrect",productDetailsPage.isContentOnPageCorrect());

@@ -9,10 +9,11 @@ public class ProductDetailsPage extends Page {
     SearchFragment searchFragment = new SearchFragment();
     MenuFragment menuFragment = new MenuFragment();
     ProductDetailsFragment productDetailsFragment = new ProductDetailsFragment();
-    BasketPopUpFragment basketPopUpFragment = new BasketPopUpFragment();
+
 
     public ProductDetailsPage() {
-        setUrl("/p");
+        String url = "/p";
+        setUrl(url);
         setTitle("Wickes Grippa Gloves Orange One Size | Wickes.co.uk");
         setFragmentsMap(
                 mainIconFragment,
@@ -22,10 +23,8 @@ public class ProductDetailsPage extends Page {
                 basketPopUpFragment);
     }
 
-    public boolean isContentOnPageCorrect(){
-        if (!pageContainsFragments(getFragments())){
-            return false;
-        }
-        return true;
+    public BasketPopUpFragment getBasketPopUpFragment() {
+        return new BasketPopUpFragment();
     }
+
 }

@@ -23,11 +23,4 @@ public class BasketPage extends Page{
                 basketFragment);
     }
 
-    public boolean isContentOnPageCorrect(){
-        if (!pageContainsFragments(getFragments())){
-            return false;
-        }
-        return true;
-    }
-
 }

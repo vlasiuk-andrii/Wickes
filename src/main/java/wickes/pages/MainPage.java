@@ -18,12 +18,4 @@ public class MainPage extends Page{
                 searchFragment,
                 menuFragment);
     }
-
-    public boolean isContentOnPageCorrect(){
-        if (!pageContainsFragments(getFragments())){
-            return false;
-        }
-        return true;
-    }
-
 }

@@ -33,6 +33,12 @@ public abstract class Page extends ServiceWD {
         this.url = url;
     }
 
+    protected void setFragmentsMap(Fragment... fragments){
+        for (Fragment fragment : fragments){
+            this.fragments.put(fragment.getClass().toString().replaceAll("class wickes.fragments.", ""), fragment);
+        }
+    }
+
     protected boolean pageContainsFragments(Map<String,Fragment> fragments){
         for (Map.Entry<String,Fragment> entry : fragments.entrySet()) {
            if (!entry.getValue().getRootElement().isDisplayed()){
@@ -42,17 +48,19 @@ public abstract class Page extends ServiceWD {
         return true;
     }
 
-    protected void setFragmentsMap(Fragment... fragments){
-        for (Fragment fragment : fragments){
-            this.fragments.put(fragment.getClass().toString().replaceAll("class wickes.fragments.", ""), fragment);
-        }
-    }
 
     public Map<String, Fragment> getFragments(){
-        return (fragments);
+        return fragments;
     }
 
-    public Fragment getFragment(String fragmentName){
-        return fragments.get(fragmentName);
+    public <T> getFragment(String fragmentName){
+        return fragments.get(fragmentName).getClass();
+    }
+
+    public boolean isContentOnPageCorrect(){
+        if (!pageContainsFragments(getFragments())){
+            return false;
+        }
+        return true;
     }
 }

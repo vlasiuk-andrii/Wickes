@@ -21,11 +21,4 @@ public class SearchResultPage extends Page{
                 searchFacetFragment,
                 searchResultFragment);
     }
-
-    public boolean isContentOnPageCorrect(){
-        if (!pageContainsFragments(getFragments())){
-            return false;
-        }
-        return true;
-    }
 }
