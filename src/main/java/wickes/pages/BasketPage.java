@@ -1,5 +1,6 @@
 package wickes.pages;
 
+import org.openqa.selenium.WebElement;
 import wickes.Page;
 import wickes.fragments.*;
 
@@ -23,8 +24,8 @@ public class BasketPage extends Page{
     public MainIconFragment getMainIconFragment() { return new MainIconFragment(); }
     public SearchFacetFragment getSearchFacetFragment() { return new SearchFacetFragment(); }
     public MenuFragment getMenuFragment(){return new MenuFragment(); }
-    public BasketPopUpFragment getBasketPopUpFragment() {
-        return new BasketPopUpFragment();
+    public BasketFragment getBasketFragment() {
+        return new BasketFragment();
     }
 
 }

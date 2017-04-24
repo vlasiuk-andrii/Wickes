@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import wickes.pages.BasketPage;
 import wickes.pages.ProductDetailsPage;
 
-import static wickes.appendice.FragmentsConstants.*;
+import static junit.framework.TestCase.assertTrue;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class AddToBasketTest extends BaseSpec{
@@ -21,9 +21,10 @@ public class AddToBasketTest extends BaseSpec{
         productDetailsPage.visit("/186927");
         productDetailsPage.check();
         when:
-        productDetailsPage.getFragment(PRODUCT_DETAILS_FRAGMENT).getChildElement(By.cssSelector("button.addToBasketButton")).click();
+        productDetailsPage.getProductDetailsFragment().closeSignUpPopUp();
+        productDetailsPage.getProductDetailsFragment().clickAddToBasketButton();
         then:
-        productDetailsPage.getFragment(BASKET_POPUP_FRAGMENT).isFragmentDisplayed();
+        assertTrue("Fragment is not displayed",productDetailsPage.getBasketPopUpFragment().isFragmentDisplayed());
     }
 
     @Test
@@ -33,6 +34,6 @@ public class AddToBasketTest extends BaseSpec{
         when:
         basketPage.check();
         then:
-        basketPage.getFragment(BASKET_FRAGMENT).getChildElement(By.cssSelector("div.product_details_sku")).isDisplayed();
+        assertTrue("Product code is not displayed",basketPage.getBasketFragment().isProductCodeDisplayed());
     }
 }

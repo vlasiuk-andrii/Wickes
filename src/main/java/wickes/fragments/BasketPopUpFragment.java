@@ -13,7 +13,10 @@ public class BasketPopUpFragment extends Fragment {
         setRootElement(root);
     }
 
-    public void isFragmentDisplayed(){
-        root.getAttribute("style").contains("display: block;");
+    public boolean isFragmentDisplayed(){
+        if(!root.getAttribute("style").contains("display: block;")){
+            return false;
+        }
+            return true;
     }
 }
