@@ -57,13 +57,13 @@ public class ContentTest extends BaseSpec{
     }
 
     @Test
-    public void productDetailsPage() throws InterruptedException {
+    public void productDetailsPage() {
         given:
         productDetailsPage.visit("/186927");
         when:
         productDetailsPage.check();
-        productDetailsPage.getFragment(PRODUCT_DETAILS_FRAGMENT).getChildElement(By.cssSelector("button.addToBasketButton")).click(); // need for making PopUp visible
-        Thread.sleep(1000);
+        productDetailsPage.getProductDetailsFragment().closeSignUpPopUp();
+        productDetailsPage.getProductDetailsFragment().clickAddToBasketButton();
         then:
         assertTrue("Content on productDetailsPage is incorrect",productDetailsPage.isContentOnPageCorrect());
     }

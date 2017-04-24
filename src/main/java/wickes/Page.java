@@ -53,8 +53,8 @@ public abstract class Page extends ServiceWD {
         return fragments;
     }
 
-    public <T> getFragment(String fragmentName){
-        return fragments.get(fragmentName).getClass();
+    public Fragment getFragment(String fragmentName){
+        return fragments.get(fragmentName);
     }
 
     public boolean isContentOnPageCorrect(){

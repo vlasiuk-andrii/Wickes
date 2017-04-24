@@ -1,8 +1,6 @@
 package wickes.pages;
 import wickes.Page;
-import wickes.fragments.MainIconFragment;
-import wickes.fragments.MenuFragment;
-import wickes.fragments.SearchFragment;
+import wickes.fragments.*;
 
 public class MainPage extends Page{
 
@@ -18,4 +16,8 @@ public class MainPage extends Page{
                 searchFragment,
                 menuFragment);
     }
+
+    public MainIconFragment getMainIconFragment() { return new MainIconFragment(); }
+    public SearchFacetFragment getSearchFacetFragment() { return new SearchFacetFragment(); }
+    public MenuFragment getMenuFragment(){return new MenuFragment(); }
 }

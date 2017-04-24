@@ -1,10 +1,7 @@
 package wickes.pages;
 
 import wickes.Page;
-import wickes.fragments.BasketFragment;
-import wickes.fragments.MainIconFragment;
-import wickes.fragments.MenuFragment;
-import wickes.fragments.SearchFragment;
+import wickes.fragments.*;
 
 public class BasketPage extends Page{
 
@@ -21,6 +18,13 @@ public class BasketPage extends Page{
                 searchFragment,
                 menuFragment,
                 basketFragment);
+    }
+
+    public MainIconFragment getMainIconFragment() { return new MainIconFragment(); }
+    public SearchFacetFragment getSearchFacetFragment() { return new SearchFacetFragment(); }
+    public MenuFragment getMenuFragment(){return new MenuFragment(); }
+    public BasketPopUpFragment getBasketPopUpFragment() {
+        return new BasketPopUpFragment();
     }
 
 }

@@ -21,4 +21,24 @@ public class SearchResultPage extends Page{
                 searchFacetFragment,
                 searchResultFragment);
     }
+
+    public MainIconFragment getMainIconFragment() {
+        return mainIconFragment;
+    }
+
+    public SearchFragment getSearchFragment() {
+        return searchFragment;
+    }
+
+    public MenuFragment getMenuFragment() {
+        return menuFragment;
+    }
+
+    public SearchFacetFragment getSearchFacetFragment() {
+        return searchFacetFragment;
+    }
+
+    public SearchResultFragment getSearchResultFragment() {
+        return searchResultFragment;
+    }
 }

@@ -35,5 +35,10 @@ public class ProductDetailsFragment extends Fragment {
 
     public void clickAddToBasketButton() {
         getChildElement(addToBasketButton).click();
+        waitForJSinactivity();
+    }
+
+    public void closeSignUpPopUp(){
+        getDriver().findElement(By.cssSelector("a#lightBoxClose")).click();
     }
 }

@@ -1,10 +1,7 @@
 package wickes.pages;
 
 import wickes.Page;
-import wickes.fragments.AccountFragment;
-import wickes.fragments.MainIconFragment;
-import wickes.fragments.MenuFragment;
-import wickes.fragments.SearchFragment;
+import wickes.fragments.*;
 
 public class LoginPage extends Page {
 
@@ -22,4 +19,9 @@ public class LoginPage extends Page {
                 menuFragment,
                 accountFragment);
     }
+
+    public MainIconFragment getMainIconFragment() { return new MainIconFragment(); }
+    public SearchFacetFragment getSearchFacetFragment() { return new SearchFacetFragment(); }
+    public MenuFragment getMenuFragment(){return new MenuFragment(); }
+    public AccountFragment getAccountFragment() {return new AccountFragment();}
 }

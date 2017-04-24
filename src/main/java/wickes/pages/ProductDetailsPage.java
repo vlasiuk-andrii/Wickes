@@ -9,6 +9,7 @@ public class ProductDetailsPage extends Page {
     SearchFragment searchFragment = new SearchFragment();
     MenuFragment menuFragment = new MenuFragment();
     ProductDetailsFragment productDetailsFragment = new ProductDetailsFragment();
+    BasketPopUpFragment basketPopUpFragment = new BasketPopUpFragment();
 
 
     public ProductDetailsPage() {
@@ -23,8 +24,11 @@ public class ProductDetailsPage extends Page {
                 basketPopUpFragment);
     }
 
+    public MainIconFragment getMainIconFragment() { return new MainIconFragment(); }
+    public SearchFacetFragment getSearchFacetFragment() { return new SearchFacetFragment(); }
+    public MenuFragment getMenuFragment(){return new MenuFragment(); }
+    public ProductDetailsFragment getProductDetailsFragment() {return new ProductDetailsFragment(); }
     public BasketPopUpFragment getBasketPopUpFragment() {
         return new BasketPopUpFragment();
     }
-
 }
